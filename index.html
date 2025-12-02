@@ -125,10 +125,10 @@
     <link href="src/css/style.css" rel="stylesheet" />
     <link href="src/css/custom.css" rel="stylesheet" />
     <script type="text/javascript">
-        (function(c,l,a,r,i,t,y){
-            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-            t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-            y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+        (function (c, l, a, r, i, t, y) {
+            c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
+            t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
+            y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
         })(window, document, "clarity", "script", "uff2m0vwfs");
     </script>
 </head>
@@ -137,42 +137,40 @@
     data-version="2.8">
     <script data-savepage-type="" type="text/plain"></script>
     <!-- Exit Intent Script (Preserved) -->
-    <div style="display:none;">
-        <iframe data-savepage-key="0-0" data-savepage-sameorigin="" data-savepage-srcdoc="&lt;script&gt;
-    // Checa se o usuário está em um dispositivo móvel
-    function isMobile() {
-        return /Mobi|Android|iPhone|iPad|iPod|BlackBerry|Windows Phone/i.test(navigator.userAgent);
-    }
-
-    // Verifica se o usuário está tentando sair da página
-    window.onbeforeunload = function(event) {
-        // Se for um dispositivo móvel, redireciona para a página de segunda oferta
-        if (isMobile()) {
-            event.preventDefault(); // Impede a ação padrão (fechar ou navegar)
-            window.location.href = 'https://www.mudardevidacursos.online/backbio';
-        }
-    };
-
-    // Força o redirecionamento se o usuário tentar clicar para sair
-    document.addEventListener('touchstart', function(e) {
-        var touchStartX = e.touches[0].clientX;
-
-        document.addEventListener('touchend', function(e) {
-            var touchEndX = e.changedTouches[0].clientX;
-
-            // Se o usuário tentar sair para a esquerda (swipe), redireciona para a página de 20,90
-            if (touchStartX - touchEndX &gt; 100) {
-                window.location.href = 'https://www.mudardevidacursos.online/backbio';
-            }
-        });
-    });
-&lt;/script&gt;" srcdoc='&lt;html&gt;&lt;head&gt;&lt;script data-savepage-type="" type="text/plain"&gt;&lt;/script&gt;
-&lt;style id="savepage-cssvariables"&gt;
-  :root {
-  }
-&lt;/style&gt;
-                                  &lt;/head&gt;&lt;body&gt;&lt;/body&gt;&lt;/html&gt;'></iframe>
     </div>
+
+    <!-- Back Redirect Script (History API) -->
+    <script>
+        (function () {
+            // URL para redirecionamento
+            var backRedirectUrl = 'https://www.mudardevidacursos.online/backbio';
+
+            // Empilha um estado no histórico para capturar o botão voltar
+            history.pushState({ page: 1 }, "", window.location.href);
+
+            // Detecta o evento de voltar
+            window.onpopstate = function (event) {
+                if (event.state) {
+                    // Se houver estado, o usuário voltou para a página original (não faz nada ou re-empilha)
+                } else {
+                    // Se não houver estado (ou for null), significa que ele tentou sair
+                    window.location.href = backRedirectUrl;
+                }
+            };
+
+            // Reforço: re-empilha o estado a cada interação para garantir
+            document.addEventListener('click', function () {
+                history.pushState({ page: 1 }, "", window.location.href);
+            }, { once: true });
+
+            // Mantém a lógica de Exit Intent para Desktop (mouse saindo da tela)
+            document.addEventListener("mouseleave", function (e) {
+                if (e.clientY < 0) {
+                    window.location.href = backRedirectUrl;
+                }
+            });
+        })();
+    </script>
 
     <section id="hero" class="section-dark" style="text-align: center; padding: 40px 20px 10px;">
         <div class="container-custom">
