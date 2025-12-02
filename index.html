@@ -67,11 +67,36 @@
         property="og:image" />
     <link data-savepage-href="https://media.atomicatpages.net/u/jZ1GZvu8ohaE7I0qXnqwYIkSr1m1/Pictures/WAEKpC2050541.png"
         href="src/assets/images/favicon.png" rel="shortcut icon" type="image/png" />
-    <script async="" data-savepage-src="https://connect.facebook.net/en_US/fbevents.js" data-savepage-type=""
-        type="text/plain"></script>
-    <script data-savepage-type="" type="text/plain"></script>
-    <script async="" data-savepage-src="https://cdn.utmify.com.br/scripts/pixel/pixel.js" data-savepage-type="" defer=""
-        type="text/plain"></script>
+    <!-- Meta Pixel Code -->
+    <script>
+        !function (f, b, e, v, n, t, s) {
+            if (f.fbq) return; n = f.fbq = function () {
+                n.callMethod ?
+                    n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+            };
+            if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0';
+            n.queue = []; t = b.createElement(e); t.async = !0;
+            t.src = v; s = b.getElementsByTagName(e)[0];
+            s.parentNode.insertBefore(t, s)
+        }(window, document, 'script',
+            'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', '1236979091594810');
+        fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+            src="https://www.facebook.com/tr?id=1236979091594810&ev=PageView&noscript=1" /></noscript>
+    <!-- End Meta Pixel Code -->
+    <script>
+        window.pixelId = "6925bc19e00ee197ba38496d";
+        var a = document.createElement("script");
+        a.setAttribute("async", "");
+        a.setAttribute("defer", "");
+        a.setAttribute("src", "https://cdn.utmify.com.br/scripts/pixel/pixel.js");
+        document.head.appendChild(a);
+    </script>
+
+    <script src="https://cdn.utmify.com.br/scripts/utms/latest.js" data-utmify-prevent-xcod-sck
+        data-utmify-prevent-subids async defer></script>
     <script data-savepage-type="" type="text/plain"></script>
     <script data-savepage-type="" type="text/plain"></script>
     <link crossorigin="" data-savepage-href="https://fonts.gstatic.com" href="" rel="preconnect" />
@@ -817,7 +842,7 @@
                     </ul>
                     <div style="text-align: center; margin-top: 20px;">
                         <p style="color: #666; font-size: 0.9em; margin-bottom: 5px;">DE: <span
-                                style="text-decoration: line-through;">R$ 167,00</span></p>
+                                style="text-decoration: line-through;">R$ 197,00</span></p>
                         <p style="margin-bottom: 5px;">POR: </p>
                         <p style="font-size: 2.5em; font-weight: 800; color: #333;">R$ 29,00</p>
                         <p style="font-size: 0.8em; color: #666;">à vista no PIX ou cartão</p>
@@ -1166,7 +1191,7 @@
     </section>
     <script>
         document.addEventListener('DOMContentLoaded', function () {
-            var duration = 60 * 12 + 54; // 12 minutes 54 seconds
+            var duration = 60 * 25; // 25 minutes
             var display = document.querySelector('#countdown-timer');
 
             if (!display) return;
